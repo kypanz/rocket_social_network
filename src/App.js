@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+
+// If is connected
+import Connected from './components/Connected/Connected';
+
+// Raffle system
+import Raffle from './components/Raffle/Raffle';
+
+// React router
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+       <Routes>
+        <Route path="/" element={<Connected />} />
+        <Route path="raffle" element={<Raffle />} />
+      </Routes>
     </div>
   );
 }
